@@ -25,3 +25,39 @@ CommandType getInputValue(char s[]){
         }
 
         if(strcmp(s, "find") == 0){
+                return find;
+        }
+
+
+        if(strcmp(s, "search") == 0){
+                return search;
+        }
+
+        return incorrect;
+
+
+}
+typedef struct node{
+
+
+        int prefix_count;
+
+        struct node *children[ALPHABET_LENGTH +1];
+
+}trie_node;
+
+
+
+
+
+
+addFunction(){}
+
+
+findFunction(){}
+
+
+
+searchFunction(){}
+
+
