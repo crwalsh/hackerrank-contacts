@@ -1,0 +1,11 @@
+10
+add car
+add cart
+add cat
+add dog
+find ca
+find car
+find do
+find cow
+search cat
+search c

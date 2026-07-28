@@ -1,0 +1,10 @@
+9
+add a
+add ab
+add abc
+find a
+search a
+search ab
+search abcd
+find abc
+find ab

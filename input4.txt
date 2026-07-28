@@ -1,0 +1,6 @@
+5
+find z
+search z
+add zebra
+find ze
+search zeb

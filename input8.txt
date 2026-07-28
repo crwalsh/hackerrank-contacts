@@ -1,0 +1,9 @@
+8
+search bob
+find bo
+add bob
+search bob
+find b
+add bobby
+find bob
+search bobby
