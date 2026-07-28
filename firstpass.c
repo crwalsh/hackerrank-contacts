@@ -140,7 +140,7 @@ freeEverything(trie_node *t){
 
                 p++;
          }
-         free(t);
+         freeEverything(t);
 
 
 }
