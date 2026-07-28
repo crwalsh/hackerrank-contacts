@@ -1,0 +1,10 @@
+2
+yes
+no
+2
+1
+yes
+0
+yes
+4
+no

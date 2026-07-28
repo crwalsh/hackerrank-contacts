@@ -81,7 +81,7 @@ int main() {
             add(root, name);
         }
         else if(strcmp(operation, "search") == 0) {
-            printf("%d\n", search(root, name));
+            printf("%s\n", search(root, name) ? "yes" : "no");
         }
         else {
             printf("%d\n", find(root, name));

@@ -1,0 +1,16 @@
+15
+add jordan
+add jorge
+find jo
+search jordan
+search jord
+add jord
+find jord
+add amy
+find a
+search amy
+find z
+search jorge
+add jose
+find jo
+search joseph

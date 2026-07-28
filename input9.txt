@@ -1,0 +1,11 @@
+10
+add alice
+add alina
+add beth
+add ben
+find al
+find be
+search ali
+search beth
+find x
+search ben
