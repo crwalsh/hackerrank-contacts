@@ -61,3 +61,32 @@ findFunction(){}
 searchFunction(){}
 
 
+int main(void){
+        char s[L_SIZE];
+        int numCommands;
+        int size = sizeof(trie_node);
+        trie_node *root = calloc(1, size);
+
+        if(root == NULL){
+                return -1;
+        }
+
+
+        fgets(s, sizeof(s), stdin);
+
+        numCommands = atoi(s);
+
+
+        for(int i=0; i<numCommands; i++){
+
+                fgets(s, sizeof(s), stdin);
+
+
+                char *command = strtok(s, " \n");
+                char *n = strtok(NULL, " \n");
+
+
+                CommandType in = getInputValue(command);
+
+
+
