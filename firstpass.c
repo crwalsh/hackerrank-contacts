@@ -90,3 +90,29 @@ int main(void){
 
 
 
+                switch (in){
+
+                        case add:
+                                addFunction(root,n);
+                                break;
+
+                        case find:
+                                printf("%d\n", findFunction(root, n));
+                                break;
+
+
+                        case search:
+                                if(searchFunction(root,n)){
+                                        printf("yes\n");
+                                }else{
+                                        printf("no\n");
+                                }
+                                break;
+
+                        case incorrect:
+                                break;
+                }
+        }
+
+        return 0;
+}
