@@ -49,7 +49,7 @@ typedef struct node{
 }trie_node;
 
 
-trie_node *goDownTrie(char *n, tree_node t){
+trie_node *goDownTrie(char *n, trie_node *t){
 
         int g = 0;
 
@@ -62,12 +62,12 @@ trie_node *goDownTrie(char *n, tree_node t){
                         return NULL;
                 }
                 t = (*t).children[letter];
-                j++
+                g++;
         }
         return t;
 }
 
-trie_node *goDownTrieCreate(char *n, tree_node t){
+trie_node *goDownTrieCreate(char *n, trie_node *t){
 
         int g = 0;
 
@@ -81,14 +81,14 @@ trie_node *goDownTrieCreate(char *n, tree_node t){
                 }
                 t = (*t).children[letter];
                 (*t).prefix_count++;
-                j++
+                g++;
         }
         return t;
 }
 
 
 
-addFunction(trie_node *root, char *n){
+void addFunction(trie_node *root, char *n){
 
         trie_node *t = goDownTrieCreate(n, root);
 
@@ -100,7 +100,7 @@ addFunction(trie_node *root, char *n){
 }
 
 
-findFunction(trie_node *root, char *n){
+int findFunction(trie_node *root, char *n){
 
          trie_node *t = goDownTrie(n, root);
 
@@ -113,7 +113,7 @@ findFunction(trie_node *root, char *n){
 
 
 
-searchFunction(trie_node *root, char *n){
+int searchFunction(trie_node *root, char *n){
 
         trie_node *t = goDownTrie(n, root);
 
@@ -127,7 +127,7 @@ searchFunction(trie_node *root, char *n){
 }
 
 
-freeEverything(trie_node *t){
+void freeEverything(trie_node *t){
         if(t == NULL){
                 return;
          }
@@ -140,7 +140,7 @@ freeEverything(trie_node *t){
 
                 p++;
          }
-         freeEverything(t);
+         free(t);
 
 
 }
@@ -198,6 +198,6 @@ int main(void){
                                 break;
                 }
         }
-
+        freeEverything(root);
         return 0;
 }
