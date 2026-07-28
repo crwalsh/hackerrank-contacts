@@ -1,4 +1,3 @@
-/*Lynsey Ciaran Ashley*/
 
 #include <stdlib.h>
 #include <stdio.h>
