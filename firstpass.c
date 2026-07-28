@@ -18,6 +18,8 @@ typedef enum {
         incorrect,
 }CommandType;
 
+
+
 CommandType getInputValue(char s[]){
 
         if(strcmp(s, "add") == 0){
@@ -47,18 +49,101 @@ typedef struct node{
 }trie_node;
 
 
+trie_node *goDownTrie(char *n, tree_node t){
+
+        int g = 0;
+
+
+        while(n[g] != '\0'){
+
+                int letter = n[g] - 'a';
+
+                if((*t).children[letter] == NULL){
+                        return NULL;
+                }
+                t = (*t).children[letter];
+                j++
+        }
+        return t;
+}
+
+trie_node *goDownTrieCreate(char *n, tree_node t){
+
+        int g = 0;
+
+
+        while(n[g] != '\0'){
+
+                int letter = n[g] - 'a';
+
+                if((*t).children[letter] == NULL){
+                        (*t).children[letter] = calloc(1, sizeof(trie_node));
+                }
+                t = (*t).children[letter];
+                (*t).prefix_count++;
+                j++
+        }
+        return t;
+}
 
 
 
+addFunction(trie_node *root, char *n){
 
-addFunction(){}
-
-
-findFunction(){}
+        trie_node *t = goDownTrieCreate(n, root);
 
 
+        if((*t).children[ALPHABET_LENGTH] ==NULL){
+         (*t).children[ALPHABET_LENGTH] = calloc(1,sizeof(trie_node));
+        }
 
-searchFunction(){}
+}
+
+
+findFunction(trie_node *root, char *n){
+
+         trie_node *t = goDownTrie(n, root);
+
+         if(t == NULL){
+                return 0;
+         }
+         return (*t).prefix_count;
+
+}
+
+
+
+searchFunction(trie_node *root, char *n){
+
+        trie_node *t = goDownTrie(n, root);
+
+        if(t == NULL){
+                return 0;
+         }
+
+         return (*t).children[ALPHABET_LENGTH] != NULL;
+
+
+}
+
+
+freeEverything(trie_node *t){
+        if(t == NULL){
+                return;
+         }
+
+         int p = 0;
+
+         while(p<=ALPHABET_LENGTH){
+
+                freeEverything((*t).children[p]);
+
+                p++;
+         }
+         free(t);
+
+
+}
 
 
 int main(void){
